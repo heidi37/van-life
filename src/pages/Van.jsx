@@ -1,11 +1,12 @@
-export default function Van({name, imageUrl, price, description, type}){
+export default function Van({name, imageUrl, price, description, type, id}){
   return (
-    <div>
-      <h1>{name}</h1>
-      <img src={imageUrl} alt={name} width="150"/>
-      <p><span>${price}</span>/per day</p>
-      <p>{description}</p>
-      <button>{type}</button>
+    <div key={id} className="van-tile">
+      <img src={imageUrl} />
+            <div className="van-info">
+                <h3>{name}</h3>
+                <p>${price}<span>/day</span></p>
+            </div>
+            <i className={`van-type ${type} selected`}>{type}</i>
     </div>
   )
 }
