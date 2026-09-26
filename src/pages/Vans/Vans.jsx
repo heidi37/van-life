@@ -1,7 +1,6 @@
 import React from "react"
 import Van from "./Van"
 
-
 const Vans = () => {
   const [vans, SetVans] = React.useState([])
 
@@ -15,7 +14,6 @@ const Vans = () => {
 
   const vanElements = vans.map((van) => {
     return (
-      
       <Van
         name={van.name}
         key={van.id}
@@ -25,7 +23,6 @@ const Vans = () => {
         description={van.description}
         type={van.type}
       />
-
     )
   })
 
