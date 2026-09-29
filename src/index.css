@@ -57,7 +57,7 @@ header a:hover {
 }
 
 main {
-    margin-bottom: 84px;
+    flex: 1;
 }
 
 footer {
@@ -459,9 +459,4 @@ i[class*='van-type-'] {
 .host-van-detail-image {
     height: 100px;
     border-radius: 5px;
-}
-
-main {
-    margin-bottom: 0;
-    flex: 1;
 }
