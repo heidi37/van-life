@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function Van({name, imageUrl, price, description, type, id}){
   return (
     <div key={id} className="van-tile">
-      <Link to={`/vans/${id}`}>
+      <Link to={id}>
       <img src={imageUrl} alt={`Image of ${name}`}/>
             <div className="van-info">
                 <h3>{name}</h3>
