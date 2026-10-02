@@ -30,6 +30,8 @@ const Vans = () => {
         price={van.price}
         description={van.description}
         type={van.type}
+        searchParams={searchParams}
+        typeFilter={typeFilter}
       />
     )
   })
