@@ -1,6 +1,8 @@
 import React from "react"
 import Van from "./Van"
 import { useSearchParams } from "react-router-dom"
+import { getVans } from "../../api"
+
 
 
 const Vans = () => {
@@ -11,11 +13,11 @@ const Vans = () => {
   const typeFilter = searchParams.get("type")
 
   React.useEffect(function () {
-    fetch("/api/vans")
-      .then((res) => res.json()) //returns regular js, takes the json out of it
-      .then((data) => {
-        SetVans(data.vans)
-      })
+    async function loadVans() {
+      const data = await getVans()
+      SetVans(data)
+    }
+    loadVans()
   }, [])
 
   const filteredVans = typeFilter ? vans.filter((van) => van.type.toLowerCase() === typeFilter.toLowerCase()) : vans
