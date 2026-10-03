@@ -16,6 +16,7 @@ import HostVanInfo from "./pages/Host/HostVanInfo"
 import HostVanPhotos from "./pages/Host/HostVanPhotos"
 import HostVanPricing from "./pages/Host/HostVanPricing"
 import NotFound from "./pages/NotFound"
+import Login from "./pages/LogIn"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="about" element={<About />}></Route>
             <Route path="vans" element={<Vans />}></Route>
             <Route path="vans/:id" element={<VanDetail />}></Route>
+            <Route path="login" element={<Login />} />
             <Route path="host" element={<HostLayout />}>
               <Route index element={<Dashboard />}></Route>
               <Route path="income" element={<Income />}></Route>
@@ -34,17 +36,11 @@ function App() {
               <Route path="vans" element={<HostVans />}></Route>
               <Route path="vans/:id" element={<HostVanDetail />}>
                 <Route index element={<HostVanInfo />}></Route>
-                <Route
-                  path="pricing"
-                  element={<HostVanPricing />}
-                ></Route>
-                <Route
-                  path="photos"
-                  element={<HostVanPhotos />}
-                ></Route>
+                <Route path="pricing" element={<HostVanPricing />}></Route>
+                <Route path="photos" element={<HostVanPhotos />}></Route>
               </Route>
             </Route>
-                <Route path="*" element={<NotFound />}/>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
